@@ -1,6 +1,6 @@
-<h1>List (index) all tasks</h1>
+<h1>All Tasks</h1>
 
-<ol>
+
 <% @tasks.each do |task| %>
     <!-- <p> Task: <%= task.title %> </p> -->
     <li>
@@ -11,12 +11,12 @@
       <% end %>
 
       <%= link_to task.title, task_path(task) %>
-      <%= link_to 'Delete', task_path(task), method: 'delete' %>
+      <%= link_to ('<i class="far fa-trash-alt"></i>').html_safe, task_path(task), method: 'delete' %>
     </li>
 <% end %>
 
 <p> <%= link_to 'Add new task', new_task_path  %> </p>
-</ol>
+
 
 
 
