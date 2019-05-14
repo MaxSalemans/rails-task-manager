@@ -1,0 +1,23 @@
+<h1>List (index) all tasks</h1>
+
+<ol>
+<% @tasks.each do |task| %>
+    <!-- <p> Task: <%= task.title %> </p> -->
+    <li>
+      <% if task.completed %>
+      <input type="checkbox" checked>
+      <% else %>
+      <input type="checkbox">
+      <% end %>
+
+      <%= link_to task.title, task_path(task) %>
+      <%= link_to 'Delete', task_path(task), method: 'delete' %>
+    </li>
+<% end %>
+
+<p> <%= link_to 'Add new task', new_task_path  %> </p>
+</ol>
+
+
+
+
